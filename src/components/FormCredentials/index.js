@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCredentials } from '../../Store/ducks/Credentials/actions';
+import * as CharactersActions from "./../../store/ducks/Characters/actions";
 import { Container, Input } from './styles';
 
 function FormCredentials() {
-  function handleCredentials() {
-
+  const dataCredentials = useSelector(state => state.Credentials);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  function handleCredentials(event) {
+    event.preventDefault();
+    dispatch(setCredentials(privateKey, publickey));
   }
-  const [privateKey, setPrivateKey] = useState("");
-  const [publickey, setPublickey] = useState("");
+  useEffect(() => {
+    dispatch(CharactersActions.loadHeroesRequest(0, 20, "-modified", dataCredentials));
+    history.push('/Home')
+  }, [dataCredentials]);
+
+  const [privateKey, setPrivateKey] = useState("d4c375f371a41d89750039c1c513cb7ecedfccf0");
+  const [publickey, setPublickey] = useState("7debee90ca219cdc3961194be7f34950");
   return (
     <Container>
       <h5>Dados de Acesso</h5>
@@ -28,6 +39,10 @@ function FormCredentials() {
         </div>
         <button type="submit">Acessar</button>
       </form>
+
+      <p>d4c375f371a41d89750039c1c513cb7ecedfccf0</p>
+      <p>7debee90ca219cdc3961194be7f34950</p>
+
     </Container>
   );
 }

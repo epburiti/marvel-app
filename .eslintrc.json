@@ -16,7 +16,7 @@
           "trailingComma": "es6",
           "semi": true,
           "jsxSingleQuote": true,
-          "singleQuote": true,
+          "singleQuote": false,
           "useTabs": true
         }
       ]
