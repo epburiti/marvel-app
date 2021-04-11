@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { setCredentials } from '../../Store/ducks/Credentials/actions';
 import * as CharactersActions from "./../../store/ducks/Characters/actions";
 import { Container, Input } from './styles';
