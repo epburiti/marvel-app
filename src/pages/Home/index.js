@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Loader from '../../components/Loader';
 import PaginationButtons from '../../components/PaginationButtons';
 import Header from '../../components/Header';
-
+import * as CharactersActions from '../../Store/ducks/Characters/actions';
 import { Container } from './styles';
 
 function Home() {
   const history = useHistory();
   const characters = useSelector((state) => state.Characters.data.results);
   const { loading } = useSelector((state) => state.Characters);
-
+  const dispatch = useDispatch();
   const dataCredentials = useSelector((state) => state.Credentials);
   useEffect(() => {
     if (
@@ -21,6 +21,11 @@ function Home() {
       history.push('/');
     }
   }, [dataCredentials]);
+  useEffect(() => {
+    dispatch(
+      CharactersActions.loadHeroesRequest(0, 10, '-modified', dataCredentials)
+    );
+  }, []);
 
   return (
     <Container>

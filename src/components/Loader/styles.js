@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100vw;
@@ -6,11 +6,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   background: rgba(17, 5, 28, 0.5);
   left: 0;
   z-index: 22;
-  bottom:0;
+  bottom: 0;
   .lds-ripple {
     display: inline-block;
     position: relative;

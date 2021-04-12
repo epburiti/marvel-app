@@ -1,36 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { setCredentials } from '../../Store/ducks/Credentials/actions';
-import * as CharactersActions from '../../store/ducks/Characters/actions';
 import { Container, Input } from './styles';
 
 function FormCredentials() {
-  const dataCredentials = useSelector((state) => state.Credentials);
   const history = useHistory();
   const dispatch = useDispatch();
+  const [privateKey, setPrivateKey] = useState(
+    'be9b49f82bdef6b3898a590fa7b2027a'
+  );
+  const [publickey, setPublickey] = useState(
+    'e2de27b52d51f14f12cd9173cb973404bb4d9228'
+  );
   function handleCredentials(event) {
     event.preventDefault();
     dispatch(setCredentials(privateKey, publickey));
-  }
-  useEffect(() => {
-    if (
-      dataCredentials.data.private_Key !== '' &&
-      dataCredentials.data.publicKey !== ''
-    ) {
-      dispatch(
-        CharactersActions.loadHeroesRequest(0, 10, '-modified', dataCredentials)
-      );
-      history.push('/Home');
-    }
-  }, [dataCredentials]);
 
-  const [privateKey, setPrivateKey] = useState(
-    'd4c375f371a41d89750039c1c513cb7ecedfccf0'
-  );
-  const [publickey, setPublickey] = useState(
-    '7debee90ca219cdc3961194be7f34950'
-  );
+    history.push('/Home');
+  }
   return (
     <Container>
       <h5>Dados de Acesso</h5>

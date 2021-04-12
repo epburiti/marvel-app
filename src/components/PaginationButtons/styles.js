@@ -11,7 +11,6 @@ export const Container = styled.section`
     text-align: center;
     text-transform: uppercase;
     color: var(--white);
-    line-height: 5rem;
     background: var(--btn);
     border-radius: 0.5rem;
     height: 5rem;
@@ -21,7 +20,7 @@ export const Container = styled.section`
     margin: 0 0.5rem;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
-    position: relative;
+    /* position: relative; */
     font-weight: 500;
     &:hover {
       opacity: 0.8;

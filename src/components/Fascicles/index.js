@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import apiRef from '../../Services/api';
-import Loader from '../Loader';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import * as ComicsActions from '../../Store/ducks/Comics/actions';
+import PagesButtons from '../PaginationButtons';
 
 import { Container } from './styles';
 
 function Fascicles({ idCharacter }) {
+  const dispatch = useDispatch();
   const credentials = useSelector((state) => state.Credentials);
-  const [dataFacicles, setDataFacicle] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(async () => {
-    const api = apiRef(
-      credentials.data.private_Key,
-      credentials.data.publicKey
+  const dataFacicles = useSelector((state) => state.Comics.data.results);
+  async function getFascicles() {
+    dispatch(
+      ComicsActions.loadHeroesRequest(
+        0,
+        10,
+        '-modified',
+        credentials,
+        idCharacter
+      )
     );
-    const data = await api.get(
-      `/v1/public/characters/${idCharacter}/comics?orderBy=-modified&limit=10&offset=0&apikey=${credentials.data.publicKey}`
-    );
-    const response = data?.data?.data?.results ? data.data.data.results : {};
-    setDataFacicle(response);
-    setLoading(false);
-    console.log('comics: ', response);
+  }
+  useEffect(() => {
+    getFascicles();
   }, []);
   return (
     <Container>
-      {loading && <Loader />}
-
       <h5>Fasículos</h5>
       <hr />
       <div className="content-comics">
@@ -61,6 +59,8 @@ function Fascicles({ idCharacter }) {
           </>
         ))}
       </div>
+
+      <PagesButtons idCharacter={idCharacter} />
     </Container>
   );
 }

@@ -38,5 +38,11 @@ export const Container = styled.div`
     .mobile {
       display: block !important;
     }
+    .name-header {
+      font-size: 2rem !important;
+    }
+    .description {
+      font-size: 1rem !important;
+    }
   }
 `;

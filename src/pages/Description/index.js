@@ -1,18 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
 import Fascicles from '../../components/Fascicles';
 import Header from '../../components/Header';
+import Loader from '../../components/Loader';
 
 import { Container } from './styles';
 
 function Description() {
   const { idCharacter } = useParams();
   const history = useHistory();
+  const refWindow = useRef(null);
   const credentials = useSelector((state) => state.Credentials);
   const character = useSelector((state) => {
     return state.Characters.data.results.find((item) => item.id == idCharacter);
   });
+  const comics = useSelector((state) => state.Comics.data.results);
+  const { loading } = useSelector((state) => state.Comics);
+
   useEffect(() => {
     if (
       credentials.data.privateKey === '' ||
@@ -21,11 +26,18 @@ function Description() {
       history.push('/');
     }
   }, []);
+  useEffect(() => {
+    if (refWindow.current) {
+      refWindow.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [comics]);
 
   return (
     <Container>
       <Header />
-      <div className="container-header">
+      {loading && <Loader />}
+
+      <div className="container-header" ref={refWindow}>
         <img
           src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
           alt={`an ilustration of ${character.name}`}

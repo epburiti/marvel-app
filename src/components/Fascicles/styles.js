@@ -51,6 +51,14 @@ export const Container = styled.section`
         }
       }
     }
+    transition: ease 0.5s all;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 1px 1px var(--black3), 2px 2px var(--black3),
+        3px 3px var(--black3);
+      -webkit-transform: translateX(-3px);
+      transform: translateX(-3px);
+    }
   }
   .desktop {
     display: block !important;
