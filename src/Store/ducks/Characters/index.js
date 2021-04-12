@@ -1,27 +1,22 @@
-import type from './types';
 import produce from 'immer';
+import type from './types';
 
-const INITIAL_STATE =
-{
+const INITIAL_STATE = {
   data: {
-    results: []
+    results: [],
   },
   loading: false,
-  error: false
-}
-  ;
-
+  error: false,
+};
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case type.LOAD_CHARACTERS_REQUEST:
       return produce(state, (draft) => {
-        console.log("LOAD_CHARACTERS_REQUEST")
         draft.loading = true;
         draft.error = false;
       });
     case type.LOAD_CHARACTERS_SUCCESS:
       return produce(state, (draft) => {
-        console.log("sucesso: ", action);
         draft.data = action.payload;
         draft.loading = false;
         draft.error = false;

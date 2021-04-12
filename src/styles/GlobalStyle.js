@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
@@ -7,6 +7,7 @@ export default createGlobalStyle`
     --main: #e5e5e5;
     --btn:#006ee3;
     --colorInput: #6c6c80;
+    --black0: #202020;
     --black1: #404040;
     --black2: #8c8c8c;
     --black3: #b9b9b9;
@@ -36,5 +37,5 @@ export default createGlobalStyle`
   /* a cada 1rem será considera 10px */
   font-size: 62.5%;
 }
-  
+
 `;

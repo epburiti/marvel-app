@@ -1,12 +1,11 @@
-import type from './types';
 import produce from 'immer';
+import type from './types';
 
-const INITIAL_STATE =
-{
+const INITIAL_STATE = {
   data: {
-    private_key: "",
-    public_key: "",
-  }
+    privateKey: '',
+    publicKey: '',
+  },
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 90%;
-  margin: 8rem auto;
+  margin: 13rem auto;
 
   .container-header {
+    width: 95%;
+    margin: 0 auto;
     box-shadow: 0 0.4rem 0.8rem 1rem rgba(0, 0, 0, 0.2);
     display: flex;
-    img {
-      width: 20rem;
-    }
+
     .header-right {
       margin-left: 5%;
-      width: 50%;
+      padding: 2rem;
     }
     .name-header {
       font-size: 5rem;
@@ -23,6 +22,21 @@ export const Container = styled.div`
       color: var(--black2);
       margin-top: 5rem;
       text-align: justify;
+      width: 90%;
+    }
+  }
+  .desktop {
+    display: block !important;
+  }
+  .mobile {
+    display: none !important;
+  }
+  @media (max-width: 700px) {
+    .desktop {
+      display: none !important;
+    }
+    .mobile {
+      display: block !important;
     }
   }
 `;

@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
 
   .styled-table {
-    margin-top:4rem;
+    margin-top: 4rem;
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
@@ -30,8 +31,8 @@ export const Container = styled.div`
   .styled-table th,
   .styled-table td {
     padding: 12px 15px;
-    max-width:33% !important;
-    img{
+    max-width: 33% !important;
+    img {
       width: 6rem;
     }
   }
@@ -49,17 +50,19 @@ export const Container = styled.div`
     font-weight: bold;
     color: var(--btn);
   }
- 
 
-  .description{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width:10ch !important;
+  tbody tr:hover {
+    background-color: rgba(0, 110, 227, 0.1) !important;
+    cursor: pointer;
   }
 
-  tbody tr:hover{
-    background-color:rgba(0, 110, 227, 0.1) !important;
-    cursor:pointer;
+  @media (max-width: 700px) {
+    .styled-table {
+      font-size: 0.7em;
+    }
+    .styled-table th,
+    .styled-table td {
+      padding: 0.4rem;
+    }
   }
 `;

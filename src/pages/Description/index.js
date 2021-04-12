@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
-import apiRef from '../../Services/api';
+import Fascicles from '../../components/Fascicles';
+import Header from '../../components/Header';
 
 import { Container } from './styles';
 
@@ -10,36 +11,41 @@ function Description() {
   const history = useHistory();
   const credentials = useSelector((state) => state.Credentials);
   const character = useSelector((state) => {
-    return state.Characters.data.results.find((item) => item.id == idCharacter)
+    return state.Characters.data.results.find((item) => item.id == idCharacter);
   });
   useEffect(() => {
     if (
-      credentials.data.private_key === '' &&
-      credentials.data.public_key === ''
+      credentials.data.privateKey === '' ||
+      credentials.data.publicKey === ''
     ) {
       history.push('/');
     }
-  }, [credentials]);
-
-  useEffect(async () => {
-    // const api = apiRef(credentials.data.private_key, credentials.data.public_key);
-    // const data = await api.get(`/v1/public/characters/${idCharacter}?apikey=${credentials.data.public_key}`);
-    // const [response] = data?.data?.data?.results ? data.data.data.results : {};
-    // setDataCharacter(response);
-    console.log(character);
-    console.log(idCharacter);
   }, []);
 
   return (
     <Container>
-      <div className='container-header'>
+      <Header />
+      <div className="container-header">
         <img
-          src={`${character.thumbnail.path}/landscape_amazing.${character.thumbnail.extension}`}
-          alt={`${character.name} image of character`}
+          src={`${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`}
+          alt={`an ilustration of ${character.name}`}
+          className="desktop"
         />
+        <img
+          src={`${character.thumbnail.path}/portrait_xlarge.${character.thumbnail.extension}`}
+          alt={`an ilustration of ${character.name}`}
+          className="mobile"
+        />
+        <div className="header-right">
+          <p className="name-header">{character.name}</p>
+          <p className="description">
+            {character.description
+              ? character.description
+              : 'No description avaliable!'}
+          </p>
+        </div>
       </div>
-
-      <h1> descrição</h1>
+      <Fascicles idCharacter={idCharacter} />
     </Container>
   );
 }
