@@ -14,8 +14,11 @@ function FormCredentials() {
     dispatch(setCredentials(privateKey, publickey));
   }
   useEffect(() => {
-    dispatch(CharactersActions.loadHeroesRequest(0, 20, "-modified", dataCredentials));
-    history.push('/Home')
+    if (dataCredentials.data.private_key !== "" && dataCredentials.data.public_key !== "") {
+      dispatch(CharactersActions.loadHeroesRequest(0, 10, "-modified", dataCredentials));
+      history.push('/Home')
+    }
+
   }, [dataCredentials]);
 
   const [privateKey, setPrivateKey] = useState("d4c375f371a41d89750039c1c513cb7ecedfccf0");
@@ -23,7 +26,7 @@ function FormCredentials() {
   return (
     <Container>
       <h5>Dados de Acesso</h5>
-      <form onSubmit={handleCredentials} data-testid="credentials-form">
+      <form data-testid="credentials-form" onSubmit={handleCredentials}>
         <div>
           <label htmlFor="private_key"></label>
           <Input type="text"

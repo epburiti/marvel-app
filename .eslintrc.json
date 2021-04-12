@@ -1,24 +1,36 @@
 {
-    "env": {
-      "browser": true,
-      "es6": true
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": ["react-app", "prettier"],
-    "plugins": ["react", "prettier"],
-    "parserOptions": {
-      "ecmaVersion": 2018
-    },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "printWidth": 80,
-          "trailingComma": "es6",
-          "semi": true,
-          "jsxSingleQuote": true,
-          "singleQuote": false,
-          "useTabs": true
-        }
-      ]
-    }
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "off",
+    "import/prefer-default-export": "off",
+    // "react-hooks/exhaustive-deps": "off",
+    "no-alert": "off",
+    "react/no-danger": "off",
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".js", "jsx"]
+    }]
   }
+}

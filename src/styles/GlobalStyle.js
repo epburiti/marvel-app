@@ -5,7 +5,7 @@ export default createGlobalStyle`
  :root {
     --white: #FFFFFF;
     --main: #e5e5e5;
-    --btn:#038AF7;
+    --btn:#006ee3;
     --colorInput: #6c6c80;
     --black1: #404040;
     --black2: #8c8c8c;

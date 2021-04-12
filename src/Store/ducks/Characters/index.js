@@ -3,7 +3,9 @@ import produce from 'immer';
 
 const INITIAL_STATE =
 {
-  data: [],
+  data: {
+    results: []
+  },
   loading: false,
   error: false
 }
@@ -20,7 +22,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     case type.LOAD_CHARACTERS_SUCCESS:
       return produce(state, (draft) => {
         console.log("sucesso: ", action);
-        draft.data.push(...action.payload);
+        draft.data = action.payload;
         draft.loading = false;
         draft.error = false;
       });
