@@ -23,23 +23,27 @@ An aplication created to search characters of Marvel. Using the API ([https://de
 ## Pages & Menu
 
 #Credential page
+the user need to enter whith the public and private key provided by the Marvel developer site, the keys are validated and if they are correct the user is directed to the home screen.
 
 <center>
   <img src="./assets/credential.png" alt="Home page" width="880" />
 
 #Home Page
+The list of characters are displayed on a table with pagination
 
 <center>
   <img src="./assets/home.png" alt="example" width="880" />
 <center>
 
 #Menu
+An responvivle menu with navigation to the credentials screen and Home screen
 
 <center>
   <img src="./assets/Menu.png" alt="example" width="880" />
 <center>
 
 #Description Page
+On the Description screen you can see the description with image and comics that the character participated(with pagination)
 
 <center>
   <img src="./assets/description.png" alt="example" width="880" />
