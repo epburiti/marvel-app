@@ -86,10 +86,7 @@ export const Container = styled.section`
       }
     }
     .card-comics {
-      img {
-        width: 12rem;
-        height: 20rem;
-      }
+
     }
   }
 `;
