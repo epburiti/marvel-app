@@ -28,7 +28,9 @@ export const Container = styled.section`
     display: flex;
     margin: 4rem 0;
     box-shadow: 0 0.4rem 0.8rem 0.5rem rgba(0, 0, 0, 0.2);
-    width: 95%;
+    min-width: 90vw;
+    max-width: 90vw;
+    overflow: hidden;
 
     .comics-right {
       p {
@@ -60,19 +62,19 @@ export const Container = styled.section`
       transform: translateX(-3px);
     }
   }
-  .desktop {
+  /* .desktop {
     display: block !important;
   }
   .mobile {
     display: none !important;
-  }
+  } */
   @media (max-width: 700px) {
-    .desktop {
+    /* .desktop {
       display: none !important;
     }
     .mobile {
       display: block !important;
-    }
+    } */
     .description {
       font-size: 1rem;
     }

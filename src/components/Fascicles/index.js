@@ -39,18 +39,17 @@ function Fascicles({ idCharacter }) {
       <hr />
       <div className="content-comics">
         {dataFacicles.map((item) => (
-          <div key={item.thumbnail.path}>
-            <div className="card-comics">
+          <div>
+            <div className="card-comics" key={item.thumbnail.path}>
               <img
                 src={`${item.thumbnail.path}/portrait_incredible.${item.thumbnail.extension}`}
                 alt={`an ilustration of ${item.name}`}
-                className="desktop"
               />
-              <img
+              {/* <img
                 src={`${item.thumbnail.path}/portrait_xlarge.${item.thumbnail.extension}`}
                 alt={`an ilustration of ${item.name}`}
                 className="mobile"
-              />
+              /> */}
               <div className="comics-right">
                 <div>
                   <p className="name-comics">{item.title}</p>
