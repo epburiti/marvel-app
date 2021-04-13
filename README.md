@@ -4,11 +4,11 @@
 
 An aplication created to search characters of Marvel. Using the API ([https://developer.marvel.com/docs](https://developer.marvel.com/docs))
 
-## Demonstração
+## Demonstration
 
 [https://marvel-app-buriti.vercel.app](https://marvel-app-buriti.vercel.app)
 
-## Tecnologias utilizadas
+## :rocket: Technologies Used
 
 - [React](https://pt-br.reactjs.org/)
 - [Redux](https://redux.js.org/)
@@ -19,6 +19,8 @@ An aplication created to search characters of Marvel. Using the API ([https://de
 - [babel](https://babeljs.io/)
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
+
+## Pages & Menu
 
 #Credential page
 
