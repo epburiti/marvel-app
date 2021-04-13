@@ -42,7 +42,7 @@ function Fascicles({ idCharacter }) {
           <div>
             <div className="card-comics" key={item.thumbnail.path}>
               <img
-                src={`${item.thumbnail.path}/portrait_incredible.${item.thumbnail.extension}`}
+                src={`${item.thumbnail.path}/portrait_medium.${item.thumbnail.extension}`}
                 alt={`an ilustration of ${item.name}`}
               />
               {/* <img
