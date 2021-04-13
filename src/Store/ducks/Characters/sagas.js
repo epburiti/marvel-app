@@ -1,20 +1,16 @@
 import { call, put } from 'redux-saga/effects';
 
-import md5 from 'md5';
 import { loadHeroesSuccess, loadHeroesFail } from './actions';
-import api from '../../../Services/api';
+import apiRef from '../../../services/api';
 
 export function* getCharacters({ offset, limit, orderBy, credentials }) {
-  const timestamp = Date.now();
-  const hash = md5(
-    timestamp + credentials.data.privateKey + credentials.data.publicKey,
-  ).toString();
+  const api = apiRef(credentials.data.privateKey, credentials.data.publicKey);
   try {
     const {
       data: { data: myData },
     } = yield call(
       api.get,
-      `/v1/public/characters?orderBy=${orderBy}&limit=${limit}&offset=${offset}&ts=${timestamp}&apikey=${credentials.data.publicKey}&hash=${hash}`,
+      `/v1/public/characters?orderBy=${orderBy}&limit=${limit}&offset=${offset}`,
     );
     myData.totalPages = Math.ceil(parseInt(myData.total / myData.limit));
     myData.actualPage = myData.offset / 10;
