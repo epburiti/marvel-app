@@ -5,7 +5,7 @@ export default function apiRef(privateKey, publicKey) {
   const ts = Date.now();
   const hash = md5(ts + privateKey + publicKey).toString();
   const api = axios.create({
-    baseURL: 'http://gateway.marvel.com',
+    baseURL: 'https://gateway.marvel.com',
     params: {
       ts,
       apikey: publicKey,
