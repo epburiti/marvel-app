@@ -1,9 +1,9 @@
 import axios from 'axios';
-import CryptoJS from 'crypto-js';
+import md5 from 'md5';
 
 export default function (privateKey, publicKey) {
   const ts = Date.now();
-  const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
+  const hash = md5(ts + privateKey + publicKey).toString();
   const api = axios.create({
     baseURL: 'http://gateway.marvel.com',
     params: {
