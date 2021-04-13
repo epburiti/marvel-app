@@ -85,5 +85,11 @@ export const Container = styled.section`
         /* text-overflow: */
       }
     }
+    .card-comics {
+      img {
+        width: 12rem;
+        height: 20rem;
+      }
+    }
   }
 `;
