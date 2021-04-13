@@ -6,9 +6,9 @@ export default function (privateKey, publicKey) {
   const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
   const api = axios.create({
     baseURL: 'http://gateway.marvel.com',
-    parans: {
+    params: {
       ts,
-      publicKey,
+      apikey: publicKey,
       hash,
     },
   });

@@ -17,7 +17,7 @@ export function* getComics({
       data: { data: myData },
     } = yield call(
       api.get,
-      `/v1/public/characters/${characterID}/comics?orderBy=${orderBy}&limit=${limit}&offset=${offset}&apikey=${credentials.data.publicKey}`
+      `/v1/public/characters/${characterID}/comics?orderBy=${orderBy}&limit=${limit}&offset=${offset}`
     );
     myData.totalPages = Math.ceil(parseInt(myData.total / myData.limit));
     myData.actualPage = myData.offset / 10;
