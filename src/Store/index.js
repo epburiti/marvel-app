@@ -6,10 +6,7 @@ import rootSaga from './ducks/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(sagaMiddleware),
-);
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 

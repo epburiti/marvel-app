@@ -1,7 +1,7 @@
 import axios from 'axios';
 import md5 from 'md5';
 
-export function apiRef(privateKey, publicKey) {
+export default function apiRef(privateKey, publicKey) {
   const ts = Date.now();
   const hash = md5(ts + privateKey + publicKey).toString();
   const api = axios.create({
