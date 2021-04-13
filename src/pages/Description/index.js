@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import Fascicles from '../../components/Fascicles';
 import Header from '../../components/Header';
 import Loader from '../../components/Loader';
@@ -9,13 +9,23 @@ import { Container } from './styles';
 
 function Description() {
   const { idCharacter } = useParams();
+  const history = useHistory();
   const refWindow = useRef(null);
   const character = useSelector((state) => {
     return state.Characters.data.results.find((item) => item.id == idCharacter);
   });
   const comics = useSelector((state) => state.Comics.data.results);
   const { loading } = useSelector((state) => state.Comics);
+  const credentials = useSelector((state) => state.Credentials);
 
+  useEffect(() => {
+    if (
+      credentials.data.privateKey === '' ||
+      credentials.data.publicKey === ''
+    ) {
+      history.push('/');
+    }
+  }, [comics]);
   useEffect(() => {
     if (refWindow.current) {
       refWindow.current.scrollIntoView({ behavior: 'smooth' });
