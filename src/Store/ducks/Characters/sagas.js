@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 
 import { loadHeroesSuccess, loadHeroesFail } from './actions';
-import apiRef from '../../../Services/api';
+import apiRef from './../../../Services/api';
 
 export function* getCharacters({ offset, limit, orderBy, credentials }) {
   const api = apiRef(credentials.data.privateKey, credentials.data.publicKey);
