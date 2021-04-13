@@ -22,9 +22,8 @@ function FormCredentials() {
   return (
     <Container>
       <h5>Dados de Acesso</h5>
-      <form data-testid="credentials-form" onSubmit={handleCredentials}>
+      <form>
         <div>
-          <label htmlFor="private_Key" />
           <Input
             type="text"
             placeholder="private_Key"
@@ -35,7 +34,6 @@ function FormCredentials() {
           />
         </div>
         <div>
-          <label htmlFor="publicKey" />
           <Input
             type="text"
             placeholder="public_Key"
@@ -45,7 +43,9 @@ function FormCredentials() {
             }}
           />
         </div>
-        <button type="submit">Acessar</button>
+        <button type="button" onClick={handleCredentials}>
+          Acessar
+        </button>
       </form>
     </Container>
   );

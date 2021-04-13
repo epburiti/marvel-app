@@ -56,29 +56,5 @@
     "styled-components": "^5.2.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "!src/index.js",
-      "!src/services/api.js"
-    ],
-    "coverageDirectory": "__tests__/coverage",
-    "setupFilesAfterEnv": [
-      "@testing-library/react/dont-cleanup-after-each",
-      "@testing-library/jest-dom/extend-expect"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/legacy_notes_and_workbook/",
-      "<rootDir>/client/src/stylesheets/"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/reactTests/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/client/src/stylesheets/",
-      "@/(.*)": "<rootDir>/src/$1"
-    }
-  },
-  "browser": {
-    "crypto": false
   }
 }
