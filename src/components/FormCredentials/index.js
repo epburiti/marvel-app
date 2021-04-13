@@ -8,10 +8,10 @@ function FormCredentials() {
   const history = useHistory();
   const dispatch = useDispatch();
   const [privateKey, setPrivateKey] = useState(
-    'e2de27b52d51f14f12cd9173cb973404bb4d9228'
+    'e2de27b52d51f14f12cd9173cb973404bb4d9228',
   );
   const [publickey, setPublickey] = useState(
-    'be9b49f82bdef6b3898a590fa7b2027a'
+    'be9b49f82bdef6b3898a590fa7b2027a',
   );
   function handleCredentials(event) {
     event.preventDefault();
@@ -38,7 +38,7 @@ function FormCredentials() {
           <label htmlFor="publicKey" />
           <Input
             type="text"
-            placeholder="publicKey"
+            placeholder="public_Key"
             value={publickey}
             onChange={(e) => {
               setPublickey(e.target.value);

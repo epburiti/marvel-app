@@ -11,17 +11,15 @@ export function* getComics({
   characterID,
 }) {
   const api = apiRef(credentials.data.privateKey, credentials.data.publicKey);
-  console.log('aquiiiiii: ', offset, limit, orderBy, credentials, characterID);
   try {
     const {
       data: { data: myData },
     } = yield call(
       api.get,
-      `/v1/public/characters/${characterID}/comics?orderBy=${orderBy}&limit=${limit}&offset=${offset}`
+      `/v1/public/characters/${characterID}/comics?orderBy=${orderBy}&limit=${limit}&offset=${offset}`,
     );
     myData.totalPages = Math.ceil(parseInt(myData.total / myData.limit));
     myData.actualPage = myData.offset / 10;
-    console.log('saga comics: ', myData);
     yield put(loadHeroesSuccess(myData));
   } catch (err) {
     console.error(err);

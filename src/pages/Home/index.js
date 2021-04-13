@@ -13,17 +13,18 @@ function Home() {
   const { loading } = useSelector((state) => state.Characters);
   const dispatch = useDispatch();
   const dataCredentials = useSelector((state) => state.Credentials);
+
   useEffect(() => {
     if (
-      dataCredentials.data.private_Key === '' &&
+      dataCredentials.data.privateKey === '' &&
       dataCredentials.data.publicKey === ''
     ) {
       history.push('/');
+      return;
     }
-  }, [dataCredentials]);
-  useEffect(() => {
+
     dispatch(
-      CharactersActions.loadHeroesRequest(0, 10, '-modified', dataCredentials)
+      CharactersActions.loadHeroesRequest(0, 10, '-modified', dataCredentials),
     );
   }, []);
 
