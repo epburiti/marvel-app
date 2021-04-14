@@ -6,7 +6,7 @@ An aplication created to search characters of Marvel. Using the API ([https://de
 
 ## Demonstration
 
-[https://marvel-app-buriti.vercel.app](https://marvel-app-buriti.vercel.app)
+[marvel-buriti.netlify.app](marvel-buriti.netlify.app)
 
 ## :rocket: Technologies Used
 
@@ -59,7 +59,7 @@ At the root of the project, use the command:
 
 ### `yarn dev`
 
-This will start the development server at the address [http://localhost:3000](http://localhost:3000)
+This will start the development server at the address [http://localhost:8080](http://localhost:8080)
 
 To use the system in production use the command:
 
