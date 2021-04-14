@@ -6,7 +6,7 @@ An aplication created to search characters of Marvel. Using the API ([https://de
 
 ## Demonstration
 
-[marvel-buriti.netlify.app](marvel-buriti.netlify.app)
+[https://marvel-buriti.netlify.app/](https://marvel-buriti.netlify.app/)
 
 ## :rocket: Technologies Used
 
