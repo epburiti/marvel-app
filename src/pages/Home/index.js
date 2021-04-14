@@ -27,14 +27,7 @@ function Home() {
       CharactersActions.loadHeroesRequest(0, 10, '-modified', dataCredentials),
     );
   }, []);
-  useEffect(() => {
-    if (
-      !characters
-    ) {
-      history.push('/');
-      return;
-    }
-  }, [characters]);
+
 
   return (
     <Container>

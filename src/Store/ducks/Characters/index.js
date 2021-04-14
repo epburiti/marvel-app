@@ -25,7 +25,6 @@ const reducer = (state = INITIAL_STATE, action) => {
       return produce(state, (draft) => {
         draft.loading = false;
         draft.error = true;
-        draft.data = []
       });
 
     default:

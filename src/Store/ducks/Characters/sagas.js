@@ -3,7 +3,6 @@ import { call, put } from 'redux-saga/effects';
 import { loadHeroesSuccess, loadHeroesFail } from './actions';
 import apiRef from '../../../services/api';
 
-
 export function* getCharacters({ offset, limit, orderBy, credentials }) {
   const api = apiRef(credentials.data.privateKey, credentials.data.publicKey);
   try {
@@ -18,6 +17,7 @@ export function* getCharacters({ offset, limit, orderBy, credentials }) {
     yield put(loadHeroesSuccess(myData));
   } catch (err) {
     yield put(loadHeroesFail());
+    window.location = '/';
     alert('Houve ume erro, provavelmente os Dados de Acesso informados estão incorretos, tente novamennte...');
     console.error(err);
   }
