@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { setCredentials } from '../../Store/ducks/Credentials/actions';
+import { setCredentials } from '@store/ducks/Credentials/actions';
 import { Container, Input } from './styles';
 
 function FormCredentials() {

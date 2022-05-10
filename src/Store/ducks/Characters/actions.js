@@ -1,11 +1,11 @@
 import Types from './types';
 
 // primeiro parametro é o type do action e o segundo um pay load se tiver
-export const loadHeroesRequest = (offset, limit, orderBy, credentials) => ({
+export const loadHeroesRequest = (offset, credentials) => ({
   type: Types.LOAD_CHARACTERS_REQUEST,
   offset,
-  limit,
-  orderBy,
+  limit: 10,
+  orderBy: '-modified',
   credentials
 });
 

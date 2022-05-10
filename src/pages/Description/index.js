@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
-import Fascicles from '../../components/Fascicles';
-import Header from '../../components/Header';
-import Loader from '../../components/Loader';
+import Fascicles from '@components/molecules/Fascicles';
+import Header from '@components/molecules/Header';
+import Loader from '@components/atoms/Loader';
 
 import { Container } from './styles';
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import * as ComicsActions from '../../Store/ducks/Comics/actions';
+import * as ComicsActions from '@store/ducks/Comics/actions';
 import PagesButtons from '../PaginationButtons';
 
 import { Container } from './styles';
@@ -23,16 +23,16 @@ function Fascicles({ idCharacter }) {
     dispatch(
       ComicsActions.loadHeroesRequest(
         0,
-        10,
-        '-modified',
         credentials,
         idCharacter,
       ),
     );
   }
+
   useEffect(() => {
     getFascicles();
   }, []);
+
   return (
     <Container>
       <h5>Fasículos</h5>
@@ -45,11 +45,6 @@ function Fascicles({ idCharacter }) {
                 src={`${item.thumbnail.path}/portrait_medium.${item.thumbnail.extension}`}
                 alt={`an ilustration of ${item.name}`}
               />
-              {/* <img
-                src={`${item.thumbnail.path}/portrait_xlarge.${item.thumbnail.extension}`}
-                alt={`an ilustration of ${item.name}`}
-                className="mobile"
-              /> */}
               <div className="comics-right">
                 <div>
                   <p className="name-comics">{item.title}</p>

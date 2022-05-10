@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from '../../components/Header';
-import FormCredentials from '../../components/FormCredentials';
+import Header from '@components/molecules/Header';
+import FormCredentials from '@components/molecules/FormCredentials';
 
 import { Container } from './styles';
 

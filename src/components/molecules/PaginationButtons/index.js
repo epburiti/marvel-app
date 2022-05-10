@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaSearchPlus } from 'react-icons/fa';
 import { FiChevronsRight, FiChevronsLeft } from 'react-icons/fi';
 
-import * as CharactersActions from '../../Store/ducks/Characters/actions';
-import * as ComicsActions from '../../Store/ducks/Comics/actions';
+import * as CharactersActions from '@store/ducks/Characters/actions';
+import * as ComicsActions from '@store/ducks/Comics/actions';
 
 import { Container, Form } from './styles';
 
@@ -37,8 +37,6 @@ const PagesButtons = ({ idCharacter = false }) => {
       dispatch(
         CharactersActions.loadHeroesRequest(
           offset,
-          10,
-          '-modified',
           dataCredentials
         )
       );
@@ -46,8 +44,6 @@ const PagesButtons = ({ idCharacter = false }) => {
       dispatch(
         ComicsActions.loadHeroesRequest(
           offset,
-          10,
-          '-modified',
           dataCredentials,
           idCharacter
         )
@@ -60,8 +56,6 @@ const PagesButtons = ({ idCharacter = false }) => {
       dispatch(
         CharactersActions.loadHeroesRequest(
           offset,
-          10,
-          '-modified',
           dataCredentials
         )
       );
@@ -69,8 +63,6 @@ const PagesButtons = ({ idCharacter = false }) => {
       dispatch(
         ComicsActions.loadHeroesRequest(
           offset,
-          10,
-          '-modified',
           dataCredentials,
           idCharacter
         )
@@ -84,8 +76,6 @@ const PagesButtons = ({ idCharacter = false }) => {
       dispatch(
         CharactersActions.loadHeroesRequest(
           offset,
-          10,
-          '-modified',
           dataCredentials
         )
       );
@@ -93,8 +83,6 @@ const PagesButtons = ({ idCharacter = false }) => {
       dispatch(
         ComicsActions.loadHeroesRequest(
           offset,
-          10,
-          '-modified',
           dataCredentials,
           idCharacter
         )
